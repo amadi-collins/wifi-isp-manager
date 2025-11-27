@@ -84,4 +84,14 @@ class Utils{
             'data'=>$data
         ];
     }
+
+    public function hash_data($data){
+        return hash('sha256', $data);
+    }
+
+    public function verify_hash($data, $hashed){
+
+        if(hash('sha256', $data) !== $hashed)return false;
+        return true;
+    }
 }
