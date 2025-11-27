@@ -94,4 +94,9 @@ class Utils{
         if(hash('sha256', $data) !== $hashed)return false;
         return true;
     }
+
+    public function validate_email($email){
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL))return false;
+        return true;
+    }
 }
